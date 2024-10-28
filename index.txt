@@ -1,0 +1,48 @@
+import Image from 'next/image'
+
+const OurPromise = () => {
+  return (
+    <section className="py-12 px-4">
+      <h2 className="text-2xl text-black font-semibold text-center mb-8">Our Promises</h2>
+
+      {/* Circular icon images */}
+      <div className="flex justify-between items-center mb-8">
+      {['promise1.png', 'promise2.png', 'promise3.png', 'promise4.png', 'promise5.png'].map((icon, index) => (
+        <div key={index} className="w-16 h-16 relative">
+        <Image
+          src={`/assets/images/${icon}`}
+          alt={`Promise ${index + 1}`}
+          layout="fill"
+          objectFit="cover"
+          className="rounded-full"
+        />
+        </div>
+      ))}
+      </div>
+
+      {/* Main content grid */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+      {/* Why Quality Matters */}
+      <div className="bg-black text-white rounded-lg overflow-hidden">
+        <div className="flex flex-col md:flex-row">
+        <div className="md:w-1/2 w-[440px] relative h-48 md:h-auto">
+          <Image
+          src="/assets/images/promise_bg.png"
+          alt="Quality Jewelry"
+          layout="fill"
+          objectFit="cover"
+          />
+        </div>
+        <div className="p-6 md:w-1/2">
+          <h3 className="text-xl font-semibold mb-4">Why Quality Matters</h3>
+          <p className="text-sm mb-4">Experience the excellence of our dedication to precision. Meticulously crafted using premium materials, combined with intricate designs and high-quality craftsmanship.</p>
+          <button className="bg-white text-black px-4 py-2 text-sm rounded">Discover →</button>
+        </div>
+        </div>
+      </div>
+      </div>
+    </section>
+  )
+}
+
+export default OurPromise
